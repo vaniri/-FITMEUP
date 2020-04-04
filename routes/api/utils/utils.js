@@ -7,4 +7,4 @@ function checkDupErr(err, res) {
     res.status(err.code === 11000 ? 409 : 500).send(err);
 }
 
-module.export = { handleUpDelRes, checkDupErr };
+module.exports = { handleUpDelRes, checkDupErr };

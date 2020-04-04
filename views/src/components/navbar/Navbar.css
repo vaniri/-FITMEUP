@@ -1,0 +1,21 @@
+.nav_menu {
+    position: relative;
+    padding: 1rem;
+    border: .2rem solid #ececec;
+    border-radius: 8px;
+    margin-right: 0;
+    margin-left: 0;
+    color: #212529;
+}
+
+.nav_item {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    margin: 0 1em;
+}
+
+.nav_item:hover {
+    color: navy;
+    text-decoration: none;
+}
