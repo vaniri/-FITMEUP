@@ -1,26 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import AuthorizedApp from './app/Auth/AuthorizedApp';
+import UnauthorizedApp from './app/Unauth/UnauthorizedApp';
 
-import Nav from './components/navbar/Navbar';
-import Profile from './pages/Profile/Profile';
-import Home from './pages/home/Home';
-
-function App() {
+function App () {
+    const isAlreadyAuthorized = !!localStorage.token;
+    const [isAuthorized, setAuthorized] = useState(isAlreadyAuthorized);
     return (
-        <Router>
-            <div>
-                <Nav />
-                <Switch>
-                    <Route path="/profile">
-                        <Profile />
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
-                </Switch>
-            </div>
-        </Router>
-    )
+        isAuthorized ?
+            <AuthorizedApp logoutHandler={() => setAuthorized(false) } /> :
+            <UnauthorizedApp loginHandler={() => setAuthorized(true) } />
+    );
 }
 
 export default App;

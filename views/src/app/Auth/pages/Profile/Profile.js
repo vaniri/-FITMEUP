@@ -4,7 +4,7 @@ import "./Profile.css";
 const Profile = () => {
     console.log("Rendering profile");
     return (
-        <div> </div>
+        <div></div>
     )
 }
 
