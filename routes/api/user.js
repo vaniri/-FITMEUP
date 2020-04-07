@@ -2,14 +2,18 @@ const express = require('express');
 const router = require('express').Router();
 const db = require('../../models/index');
 const { handleUpDelRes, checkDupErr } = require('./utils/utils.js');
+const argon2 = require('argon2');
+const { generateToken } = require('../../utils/utils');
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
 router.post('/', async (req, res) => {
     try {
-        await db.User.create(req.body);
-        res.status(201).json({});
+        req.body.password = await argon2.hash(req.body.password);
+        let result = await db.User.create(req.body);
+        let userId = result.id;
+        res.status(201).json({ result, userId, token: generateToken(userId) });
     } catch (err) {
         checkDupErr(err, res);
     }
@@ -30,5 +34,30 @@ router.route('/:id')
             res.status(500).send(err);
         }
     });
+
+
+router.post('/login', async (req, res) => {
+    try {
+        let userRecord = await db.User.findOne({ email: req.body.email });
+        if (!userRecord) {
+            console.log("User not found");
+            res.status(401);
+            return;
+        }
+
+        let correctPassword = await argon2.verify(userRecord.password, req.body.password);
+        if (!correctPassword) {
+            console.log("Incorrect password");
+            res.status(401);
+            return;
+        }
+
+        console.log("Login Successful!");
+        res.status(200).json({ userId: userRecord.id, token: generateToken(userRecord.id) });
+    } catch (err) {
+        console.log("Error logging in: ", err);
+        res.status(401).send(err);
+    }
+});
 
 module.exports = router;
