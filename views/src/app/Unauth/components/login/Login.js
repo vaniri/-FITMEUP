@@ -8,7 +8,7 @@ import "./Login.css";
 const LoginForm = props => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { history, loginHandler } = props;
+    const { loginHandler } = props;
 
     let logInUser = async () => {
         try {
@@ -16,8 +16,7 @@ const LoginForm = props => {
             if (res.status === 200) {
                 console.log("User log in successful");
                 localStorage.token = res.data.token;
-                localStorage.username = res.data.username;
-                history.push('/profile');
+                localStorage.userId = res.data.userId;
                 loginHandler();
             } else {
                 console.log("FAIL log in"); //TODO

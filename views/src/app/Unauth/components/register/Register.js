@@ -7,19 +7,19 @@ const RegisterForm = props => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { history, loginHandler } = props;
+    const { loginHandler } = props;
 
     let creatUser = async () => {
         try {
-            console.log(username, email, password);
             const res = await axios.post('http://localhost:3001/api/users/', { username, email, password });
-            if (res.status === 200) {
+            if (res.status === 201) {
                 console.log("Successfully creating new user");
-                history.push('/profile');
                 localStorage.token = res.data.token;
+                localStorage.userId = res.data.userId;
                 loginHandler();
             } else {
-                console.log("FAIL log in"); //TODO
+                console.log(res);
+                alert("FAIL log in");
             }
         } catch (err) {
             console.log("FAIL creating new user: ", err);
