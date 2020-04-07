@@ -20,6 +20,15 @@ router.post('/', async (req, res) => {
 });
 
 router.route('/:id')
+    .get( async (req, res) => {
+        try {
+            let user = await db.User.findOne({ id: req.body.id }).lean();
+            delete user.password;
+            res.json({ user });
+        } catch (err) {
+            res.status(500).send(err);
+        }
+    })
     .patch(async (req, res) => {
         try {
             await handleUpDelRes(db.User.findByIdAndUpdate(req.params.id, req.body), res);

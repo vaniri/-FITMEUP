@@ -1,0 +1,36 @@
+.user-container {
+    display: grid;
+    grid-template-columns: 20% 70%;
+    border: solid 0.05em gray;
+    margin: 3em auto;
+    padding: 1em;
+    width: 70%;
+    grid-gap: 1em;
+    box-shadow: 0 2px 4px 0 rgba(223, 216, 216, 0.2), 0 3px 10px 0 rgba(145, 141, 141, 0.19);
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+.user-img {
+    background: gray;
+    width: 200px;
+    border-radius: 50% 50%;
+}
+
+.user-posts {
+    display: grid;
+    width: 70%;
+    margin: 3em auto;
+    border: solid 0.05em gray;
+    padding: 1em;
+    box-shadow: 0 2px 4px 0 rgba(223, 216, 216, 0.2), 0 3px 10px 0 rgba(145, 141, 141, 0.19);
+}
+
+.editor {
+    width: 70%;
+    margin: 1em auto;
+    box-shadow: 0 2px 4px 0 rgba(223, 216, 216, 0.2), 0 3px 10px 0 rgba(145, 141, 141, 0.19);
+    padding: 1em;
+}

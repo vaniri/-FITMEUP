@@ -3,8 +3,7 @@ const { Schema } = mongoose;
 
 const PostSchema = new Schema ({
     title: String,
-    body: String,
-    images: [String],
+    content: String,
     posted: {
         type: Date,
         default: Date.now

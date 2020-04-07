@@ -4,14 +4,13 @@ const db = require('../../models/index');
 const { handleUpDelRes } = require('./utils/utils.js');
 const expressJwt = require('express-jwt');
 const { jwtSecret } = require('../../utils/utils');
-
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
 router.post('/', expressJwt({ secret: jwtSecret }),
     async (req, res) => {
         try {
-            await db.Post.create({ ...req.body, authot: req.user.userId });
+            await db.Post.create({ ...req.body.data, author: req.body.userId });
             res.status(201).json({});
         } catch (err) {
             res.status(500).send(err);
