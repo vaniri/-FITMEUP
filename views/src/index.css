@@ -1,4 +1,5 @@
 body {
+  background-color: snow;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -8,6 +9,13 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Lato', sans-serif, 'Courier New',
     monospace;
 }
+ img {
+   max-width: 500px;
+ }
+
+ h5 {
+   color: blue;
+ }

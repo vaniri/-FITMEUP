@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
@@ -35,9 +35,9 @@ const LoginForm = props => {
         <div className="Login">
             <form onSubmit={handleSubmit}>
                 <FormGroup controlId="email" bsSize="large">
-                    <ControlLabel>Email</ControlLabel>
                     <FormControl
                         autoFocus
+                        placeholder="email"
                         type="email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
@@ -45,9 +45,9 @@ const LoginForm = props => {
                     />
                 </FormGroup>
                 <FormGroup controlId="password" bsSize="large">
-                    <ControlLabel>Password</ControlLabel>
                     <FormControl
                         value={password}
+                        placeholder="username"
                         onChange={e => setPassword(e.target.value)}
                         type="password"
                         required

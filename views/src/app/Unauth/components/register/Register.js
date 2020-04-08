@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
@@ -35,9 +35,9 @@ const RegisterForm = props => {
         <div className="Login">
             <form onSubmit={handleSubmit}>
                 <FormGroup controlId="username" bsSize="large">
-                    <ControlLabel>Username</ControlLabel>
                     <FormControl
                         autoFocus
+                        placeholder="username"
                         type="username"
                         value={username}
                         onChange={e => setUsername(e.target.value)}
@@ -45,9 +45,9 @@ const RegisterForm = props => {
                     />
                 </FormGroup>
                 <FormGroup controlId="email" bsSize="large">
-                    <ControlLabel>Email</ControlLabel>
                     <FormControl
                         autoFocus
+                        placeholder="email"
                         type="email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
@@ -55,9 +55,9 @@ const RegisterForm = props => {
                     />
                 </FormGroup>
                 <FormGroup controlId="password" bsSize="large">
-                    <ControlLabel>Password</ControlLabel>
                     <FormControl
                         value={password}
+                        placeholder="password"
                         onChange={e => setPassword(e.target.value)}
                         type="password"
                         required

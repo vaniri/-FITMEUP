@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Nav from './components/navbar/Navbar';
+import NavBar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
 
 function UnauthorizedApp ({ loginHandler }) {
     return (
         <Router>
             <div>
-                <Nav />
+                <NavBar />
                 <Switch>
                     <Route path="/posts">
                     </Route>

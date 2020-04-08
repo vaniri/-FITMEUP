@@ -1,21 +1,61 @@
 .nav_menu {
     position: relative;
-    padding: 1rem;
+    padding: 0.05rem 1rem;
     border: .2rem solid #ececec;
     border-radius: 8px;
     margin-right: 0;
     margin-left: 0;
-    color: #212529;
+    color: black;
+    overflow: hidden;
+    background-color: slateblue;
 }
 
 .nav_item {
-    color: #007bff;
+    color: #17a2b8;
     text-decoration: none;
     background-color: transparent;
     margin: 0 1em;
 }
 
 .nav_item:hover {
-    color: navy;
+    color: #71b4be;
     text-decoration: none;
+}
+
+.user-img {
+    background: gray;
+    max-width: 100px;
+    border-radius: 50% 50%;
+    margin: 0 0.5em;
+    padding: 0;
+}
+
+#logo {
+    max-width: 100px;
+    border-radius: 50% 50%;
+}
+
+hr {
+    color: slateblue;
+}
+
+#dropdown-basic-button {
+    float: right;
+    overflow: hidden;
+    display: inline;
+    clear: both;
+}
+
+
+#dropdown-basic-button {
+    float:right;
+    color: #17a2b8;
+    background-color: transparent;
+    border-color: #17a2b8;
+}
+
+#dropdown-basic-button:hover {
+    color: white;
+    background-color: #0c5661;
+    border: none;
 }

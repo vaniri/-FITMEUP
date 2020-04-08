@@ -16,13 +16,14 @@ router.post('/', async (req, res) => {
         res.status(201).json({ result, userId, token: generateToken(userId) });
     } catch (err) {
         checkDupErr(err, res);
+        console.log(err);
     }
 });
 
 router.route('/:id')
     .get( async (req, res) => {
         try {
-            let user = await db.User.findOne({ id: req.body.id }).lean();
+            let user = await db.User.findOne({ _id: req.params.id }).lean();
             delete user.password;
             res.json({ user });
         } catch (err) {
