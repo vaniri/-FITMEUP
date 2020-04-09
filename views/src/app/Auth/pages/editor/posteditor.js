@@ -1,5 +1,5 @@
 import React from 'react';
-import SunEditor from '../components/editor/editor';
+import SunEditor from '../../components/editor/editor';
 
 function PostEditor() {
     return (

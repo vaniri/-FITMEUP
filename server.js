@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require("path");
-const { mongoose } = require("./config/index.js");
+/* setup config = */ require("./config/index.js");
 
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({ extended: true }));

@@ -1,0 +1,17 @@
+.container-lr {
+    margin: 3em 4em;
+    text-align: justify;
+}
+
+.posts-container {
+    position: relative;
+    background-color: darkgray;
+    display: grid;
+    width: 80%;
+    padding: 1em;
+    box-shadow: 0 2px 4px 0 rgba(223, 216, 216, 0.2), 0 3px 10px 0 rgba(145, 141, 141, 0.19);
+}
+
+hr {
+    background-color: tomato;
+}

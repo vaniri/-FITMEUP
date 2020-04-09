@@ -11,6 +11,7 @@ class Home extends Component {
 
     getUserPosts = async () => {
         const res = await axios.get('http://localhost:3001/api/posts/all');
+        console.log("===========");
         console.log(localStorage.username);
         if (res.status === 200) {
             this.setState({ posts: res.data.posts });
