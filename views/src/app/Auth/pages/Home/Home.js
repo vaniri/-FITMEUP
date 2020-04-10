@@ -11,8 +11,6 @@ class Home extends Component {
 
     getUserPosts = async () => {
         const res = await axios.get('http://localhost:3001/api/posts/all');
-        console.log("===========");
-        console.log(localStorage.username);
         if (res.status === 200) {
             this.setState({ posts: res.data.posts });
         }
@@ -36,7 +34,7 @@ class Home extends Component {
                         <h4>Latest Posts:</h4>
                             {this.state.posts.map(post => (
                                 <Col className="post">
-                                    <h5>Author: {localStorage.username}</h5>
+                                    <h5>Author: {post.author.username}</h5>
                                     <h5>{post.title}</h5>
                                     <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
                                     <hr />

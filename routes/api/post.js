@@ -21,7 +21,7 @@ router.post('/', expressJwt({ secret: jwtSecret }),
 
 router.get('/all', async (req, res) => {
     try {
-        let posts = await db.Post.find();
+        let posts = await db.Post.find().populate("author").lean();
         res.status(200).json({ posts });
     } catch (err) {
         res.status(500).send(err);

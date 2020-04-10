@@ -7,8 +7,8 @@ const CommentSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    author: { type: Schema.Types.ObjectId,  ref: 'User'},
-    postItem: { type: Schema.Types.ObjectId, ref: 'Post'} 
+    author: { type: Schema.Types.ObjectId, ref: 'User' },
+    postItem: { type: Schema.Types.ObjectId, ref: 'Post' }
 });
 
 const Comment = mongoose.model('Comment', CommentSchema);

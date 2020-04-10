@@ -24,9 +24,10 @@ class CommentsContainer extends Component {
     }
 
     postComment = async () => {
-        let body = this.commentEditor.value;
+        let body = this.commentForm.value;
         try {
-            let res = await axios.post('http://localhost:3001/api/comments/', { body, postItem: this.props.postItem });
+            let res = await axios.post('http://localhost:3001/api/comments/', { body, postItem: this.props.postItem },   
+            { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             if (res.status === 201) {
                 console.log("Successfully creating a comment");
                 console.log(res.data);
@@ -65,15 +66,15 @@ class CommentsContainer extends Component {
                             </Button>
                         </form>
                     </Col>
-                    </Row>
+                </Row>
+                {this.state.comments.map(comment => (
                     <Row className="comment-container">
-                    {this.state.comments.map(comment => (
                         <Col className="comment">
-                            <h5>{comment.author.username}</h5>
+                            {<h5>{comment.author ? comment.author.username : "<no author>"}</h5>}
                             <p>{comment.body}</p>
                         </Col>
-                    ))}
-                </Row>
+                    </Row>
+                ))}
             </Container>
         )
     }
