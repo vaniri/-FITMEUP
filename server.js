@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require("path");
-/* setup config = */ require("./config/index.js");
+const { mongoose } = require("./config/index.js");
 
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({ extended: true }));
@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    res.header("Access-Control-Allow-Methods", "GET, OPTIONS, POST, DELETE");
+    res.header("Access-Control-Allow-Methods", "GET, OPTIONS, POST, DELETE, PATCH");
     next();
 });
 

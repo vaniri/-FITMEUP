@@ -26,11 +26,10 @@ class CommentsContainer extends Component {
     postComment = async () => {
         let body = this.commentForm.value;
         try {
-            let res = await axios.post('http://localhost:3001/api/comments/', { body, postItem: this.props.postItem },   
-            { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
+            let res = await axios.post('http://localhost:3001/api/comments/', { body, postItem: this.props.postItem },
+                { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             if (res.status === 201) {
                 console.log("Successfully creating a comment");
-                console.log(res.data);
             } else {
                 console.log(res);
                 alert("FAIL post comment");
@@ -43,6 +42,9 @@ class CommentsContainer extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.postComment();
+        let comment = { body: this.commentForm.value, author: { username: localStorage.username }};
+        this.setState({ comments: [ ...this.state.comments, comment ] });
+        this.commentForm.value = "";
     }
 
     componentDidMount() {
@@ -51,22 +53,7 @@ class CommentsContainer extends Component {
 
     render() {
         return (
-            <Container fluid="lr">
-                <Row className="commentsForm-container">
-                    <Col>
-                        <form onSubmit={this.handleSubmit}>
-                            <FormGroup controlId="comment" bsSize="large">
-                                <FormControl
-                                    ref={(fc) => this.commentForm = fc}
-                                    placeholder="type here..."
-                                    type="text"
-                                />
-                            </FormGroup>
-                            <Button block bsSize="large" type="submit">Leave Comment
-                            </Button>
-                        </form>
-                    </Col>
-                </Row>
+            <Container fluid="sm">
                 {this.state.comments.map(comment => (
                     <Row className="comment-container">
                         <Col className="comment">
@@ -75,6 +62,21 @@ class CommentsContainer extends Component {
                         </Col>
                     </Row>
                 ))}
+                <Row className="commentsForm-container" fluid="sm">
+                    <Col>
+                        <form onSubmit={this.handleSubmit}>
+                            <FormGroup controlId="comment" bsSize="large">
+                                <FormControl id="comment-form"
+                                    ref={(fc) => this.commentForm = fc}
+                                    placeholder="type here..."
+                                    type="text"
+                                />
+                            </FormGroup>
+                            <Button id="leave-comment" block bsSize="large" type="submit">Leave Comment
+                            </Button>
+                        </form>
+                    </Col>
+                </Row>
             </Container>
         )
     }

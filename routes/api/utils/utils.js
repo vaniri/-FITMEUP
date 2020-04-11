@@ -4,6 +4,7 @@ async function handleUpDelRes(resPromise, res) {
 }
 
 function checkDupErr(err, res) {
+    console.log(err);
     res.status(err.code === 11000 ? 409 : 500).send(err);
 }
 

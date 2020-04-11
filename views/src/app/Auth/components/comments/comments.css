@@ -1,0 +1,36 @@
+
+.commentsForm-container, 
+.comment-container {
+    height: auto;
+    max-width: 80%;
+    margin: auto;
+    text-align: justify;
+}
+ 
+#comment-form {
+    height: 150px;
+    width: 70%;
+}
+
+#leave-comment {
+width: 70%;
+}
+
+.comment-container  {
+    margin: 1em auto; 
+    box-shadow: 0 2px 4px 0 rgba(223, 216, 216, 0.2), 0 3px 10px 0 rgba(145, 141, 141, 0.19);
+    padding: 0.8em 0;
+}
+
+
+
+.post {
+    padding: 1.5em 0;
+    box-shadow: 0 2px 4px 0 rgba(223, 216, 216, 0.2), 0 3px 10px 0 rgba(145, 141, 141, 0.19);
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+}

@@ -11,16 +11,14 @@ const RegisterForm = props => {
 
     let creatUser = async () => {
         try {
-            let res = await axios.post('http://localhost:3001/api/users/', { username, email, password });
+            const res = await axios.post('http://localhost:3001/api/users/', { username, email, password });
             if (res.status === 201) {
                 console.log("Successfully creating new user");
-                console.log(res.data);
                 localStorage.token = res.data.token;
                 localStorage.userId = res.data.userId;
                 localStorage.username = res.data.result.username; 
                 loginHandler();
             } else {
-                console.log(res);
                 alert("FAIL log in");
             }
         } catch (err) {
@@ -65,7 +63,7 @@ const RegisterForm = props => {
                         required
                     />
                 </FormGroup>
-                <Button block bsSize="large" type="submit">
+                <Button variant="info" block size="large" type="submit">
                     Create Account
                 </Button>
             </form>

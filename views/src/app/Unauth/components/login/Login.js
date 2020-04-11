@@ -17,6 +17,8 @@ const LoginForm = props => {
                 console.log("User log in successful");
                 localStorage.token = res.data.token;
                 localStorage.userId = res.data.userId;
+                localStorage.username = res.data.username;
+                localStorage.userImg = res.data.userImg;
                 loginHandler();
             } else {
                 console.log("FAIL log in"); //TODO
@@ -53,7 +55,7 @@ const LoginForm = props => {
                         required
                     />
                 </FormGroup>
-                <Button block bsSize="large" type="submit">
+                <Button variant="info" block bsSize="large" type="submit">
                     Login
                 </Button>
             </form>

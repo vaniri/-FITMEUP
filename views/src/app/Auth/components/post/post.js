@@ -33,17 +33,19 @@ class PostContainer extends Component {
     }
 
     render() {
-        console.log(this.state.posts);
         return (
-            <Container fluid="lr">
+            <Container fluid="sm">
                 <Row className="posts-container">
-                    <h4>Latest Posts:</h4>
                     {this.state.posts.map(post => (
-                        <Col>
-                            <h5>{post.title}</h5>
-                            <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
-                            <hr />
-                        </Col>
+                        <Row className="posts-container">
+                            <Col className="post">
+                                <h5 className="content">{post.title}</h5>
+                                <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
+                                <Col id="link-container">
+                                    <a href={`/postWithComments/${post._id}`}>read comments</a>
+                                </Col>
+                            </Col>
+                        </Row>
                     ))}
                 </Row>
             </Container>

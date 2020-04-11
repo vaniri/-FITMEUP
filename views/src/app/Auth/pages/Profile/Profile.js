@@ -1,7 +1,7 @@
 import React from 'react';
-import UserContainer from '../../components/user/user'
-import PostsContainer from '../../components/post/post'
-import { Container, Col, Row } from 'react-bootstrap';
+import UserContainer from '../../components/user/user';
+import PostsContainer from '../../components/post/post';
+import { Container } from 'react-bootstrap';
 
 
 const Profile = () => {

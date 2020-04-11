@@ -1,42 +1,42 @@
-import React, { Component } from 'react';
+import React, { useState } from "react";
 import axios from 'axios';
 import 'suneditor/dist/css/suneditor.min.css';
 import SunEditor, { buttonList, } from "suneditor-react";
-import { Container, Col, Row } from 'react-bootstrap';
+import { Container, Col, Row, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './editor.css';
 
-class MyComponent extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { title: "", content: "" };
+const PostEditorComponent = () => {
+  
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+
+    const history = useHistory();
+
+    let handlePost = (postId) => {
+        let path = `/postWithComments/${postId}`
+        history.push(path);
     }
 
-    handleChange = (content) => {
-        this.setState({ content });
-    }
-
-    getTitle = (event) => {
-        let title = event.target.value;
-        this.setState({ title });
-    }
-
-    handleFocus = event => {
+    let handleFocus = event => {
         console.log(event);
     }
 
-    handleBlur = event => {
+    let handleBlur = event => {
         console.log(event);
     }
 
-    sendPost = async () => {
+    let sendPost = async () => {
         try {
-            console.log("TOKEN", localStorage);
             const res = await axios.post(`http://localhost:3001/api/posts/`,
-                { data: this.state, userId: localStorage.userId },
+                { data: { title, content }, userId: localStorage.userId },
                 { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
-            if (res.status.code === 201) {
-                console.log("Post")
+            console.log(1111111111111);
+            console.log(res);
+            if (res.status === 201) {
+                console.log("Post successfully");
+                handlePost(res.data.postId);
             } else if (res.status === 500) {
                 alert("FAIL to post");
             }
@@ -46,37 +46,36 @@ class MyComponent extends Component {
         }
     }
 
-    render() {
         return (
-            <Container className="editor">
-                <Row>
-                    <Col>
-                        <p> Create new post </p>
+            <Container fluid="sm">
+                <Row className="editor-container">
+                    <Col className="editor">
                         <input
                             type='text'
                             name='title'
                             id='title'
-                            value={this.title}
-                            onChange={this.getTitle}
-                            placeholder='title'>
+                            value={title}
+                            onChange={e => setTitle(e.target.value)}
+                            placeholder='Post title'>
                         </input>
                         <SunEditor
                             placeholder="Please type here..."
                             autoFocus={true}
-                            onChange={this.handleChange}
-                            onFocus={this.handleFocus}
-                            onBlur={this.handleBlur}
+                            onChange={setContent}
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
                             setOptions={{
                                 height: 200,
                                 buttonList: buttonList.complex
                             }} />
-                        <button type="submit" onClick={this.sendPost}>POST</button>
+                            <Col>
+                        <Button id="post-button" variant="info" block size="sm" type="submit" onClick={sendPost}>POST</Button>
+                        </Col>
                     </Col>
                 </Row>
             </Container>
         );
-    };
 }
 
-export default MyComponent;
+export default PostEditorComponent;
 

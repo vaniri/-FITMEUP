@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Home.css';
 
 class Home extends Component {
     constructor(props) {
@@ -27,23 +28,21 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                <Container fluid="lr">
-                    <Row>
-                        <Col className="post-container" style={{backgroundColor: "darkgray", padding: "1em"}}>
-                        <h4>Latest Posts:</h4>
-                            {this.state.posts.map(post => (
-                                <Col className="post">
-                                    <h5>Author: {post.author.username}</h5>
-                                    <h5>{post.title}</h5>
-                                    <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
-                                    <hr />
+            <Container fluid="sm">
+                <Row className="posts-container">
+                    {this.state.posts.map(post => (
+                        <Row className="posts-container">
+                            <Col className="post">
+                                <h5 id="post=title" className="content">{post.title}</h5>
+                                <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
+                                <Col id="link-container">
+                                <a href={`/postWithComments/${post._id}`}>read comments</a>
                                 </Col>
-                            ))}
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+                            </Col>
+                        </Row>
+                    ))}
+                </Row>
+            </Container>
         )
     }
 }

@@ -10,28 +10,29 @@
     background-color: slateblue;
 }
 
-.nav_item {
+.nav_item, .nav-link {
     color: #17a2b8;
     text-decoration: none;
     background-color: transparent;
     margin: 0 1em;
 }
 
-.nav_item:hover {
+.nav-link:hover {
     color: #71b4be;
     text-decoration: none;
 }
 
-.user-img {
-    background: gray;
-    max-width: 100px;
+.avatar {
+    max-width: 80px;
+    height: 80px;
+    ;
     border-radius: 50% 50%;
     margin: 0 0.5em;
     padding: 0;
 }
 
 #logo {
-    max-width: 100px;
+    max-width: 80px;
     border-radius: 50% 50%;
 }
 
@@ -39,23 +40,46 @@ hr {
     color: slateblue;
 }
 
-#dropdown-basic-button {
-    float: right;
+#basic-nav-dropdown {
     overflow: hidden;
     display: inline;
     clear: both;
 }
 
-
-#dropdown-basic-button {
-    float:right;
+#basic-nav-dropdown {
     color: #17a2b8;
     background-color: transparent;
     border-color: #17a2b8;
 }
 
-#dropdown-basic-button:hover {
+#basic-nav-dropdown:hover {
     color: white;
     background-color: #0c5661;
     border: none;
+}
+
+#logout-container {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+#logout-button {
+    color: tomato;
+    background-color: transparent;
+    border-color: tomato;
+}
+
+#logout-button:hover {
+    color: white;
+    background-color: tomato;
+    border: none;
+}
+
+#dropDown {
+    float: right;
+}
+
+.logo-container {
+    max-width: 100px;
+    margin: 0 1em;
 }
