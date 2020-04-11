@@ -47,18 +47,21 @@ router.route('/:id')
 
 
 router.post('/login', async (req, res) => {
+    console.log("got login request", req.body);
     try {
         let userRecord = await db.User.findOne({ email: req.body.email });
+        console.log("found user", userRecord);
         if (!userRecord) {
             console.log("User not found");
-            res.status(401);
+            res.status(401).send();
             return;
         }
 
         let correctPassword = await argon2.verify(userRecord.password, req.body.password);
+        console.log("correct pw", correctPassword);
         if (!correctPassword) {
             console.log("Incorrect password");
-            res.status(401);
+            res.status(401).send();
             return;
         }
 

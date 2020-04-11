@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
@@ -11,11 +11,13 @@ const RegisterForm = props => {
 
     let creatUser = async () => {
         try {
-            const res = await axios.post('http://localhost:3001/api/users/', { username, email, password });
+            let res = await axios.post('http://localhost:3001/api/users/', { username, email, password });
             if (res.status === 201) {
                 console.log("Successfully creating new user");
+                console.log(res.data);
                 localStorage.token = res.data.token;
                 localStorage.userId = res.data.userId;
+                localStorage.username = res.data.result.username; 
                 loginHandler();
             } else {
                 console.log(res);
@@ -44,7 +46,7 @@ const RegisterForm = props => {
                         required
                     />
                 </FormGroup>
-                <FormGroup controlId="email" bsSize="large">
+                <FormGroup controlId="regemail" bsSize="large">
                     <FormControl
                         autoFocus
                         placeholder="email"
@@ -54,7 +56,7 @@ const RegisterForm = props => {
                         required
                     />
                 </FormGroup>
-                <FormGroup controlId="password" bsSize="large">
+                <FormGroup controlId="regpassword" bsSize="large">
                     <FormControl
                         value={password}
                         placeholder="password"

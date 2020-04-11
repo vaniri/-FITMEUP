@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
@@ -47,7 +47,7 @@ const LoginForm = props => {
                 <FormGroup controlId="password" bsSize="large">
                     <FormControl
                         value={password}
-                        placeholder="username"
+                        placeholder="password"
                         onChange={e => setPassword(e.target.value)}
                         type="password"
                         required

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Dropdown, DropdownButton, MenuItem, Navbar, Nav, Button } from 'react-bootstrap';
+import { Dropdown, DropdownButton, Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css';
 
@@ -14,7 +14,7 @@ const NavBar = ({ location, logoutHandler }) => {
           <Link className={`nav_item ${location.pathname === '/' ? 'active' : ""}`} to='/'>Home
             </Link>
         </Nav.Link>
-        <DropdownButton id="dropdown-basic-button" title="click me">
+        <DropdownButton className="pull-right" id="dropdown-basic-button" title="click me">
           <Dropdown.Item href="#/action-1">
             <Link className={`nav_item ${location.pathname === '/newpost' ? 'active' : ""}`} to='/newpost'>New post
             </Link>

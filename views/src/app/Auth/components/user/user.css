@@ -1,0 +1,21 @@
+.user-container {
+    float: right;
+}
+
+.user {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 1em;
+}
+
+.user-img {
+    background: gray;
+    width: 200px;
+    border-radius: 50% 50%;
+    margin-bottom: 1em;
+    text-align: center;
+}
