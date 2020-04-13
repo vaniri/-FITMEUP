@@ -40,21 +40,13 @@ hr {
     color: slateblue;
 }
 
-#basic-nav-dropdown {
-    overflow: hidden;
-    display: inline;
-    clear: both;
-}
-
-#basic-nav-dropdown {
-    color: #17a2b8;
+#collasible-nav-dropdown {
+    color: #17a2b8 !important;
     background-color: transparent;
-    border-color: #17a2b8;
+    border: solid 0.01em #17a2b8;
 }
 
-#basic-nav-dropdown:hover {
-    color: white;
-    background-color: #0c5661;
+#collasible-nav-dropdown:hover {
     border: none;
 }
 
@@ -82,4 +74,9 @@ hr {
 .logo-container {
     max-width: 100px;
     margin: 0 1em;
+}
+
+.link:hover {
+    cursor: pointer;
+    color: tomato;
 }

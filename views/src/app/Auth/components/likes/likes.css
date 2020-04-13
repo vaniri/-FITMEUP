@@ -1,0 +1,22 @@
+#like, 
+#brain{
+    -webkit-font-smoothing: antialiased;
+    margin: 0.5em 0.3em;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    background: transparent;
+    border: solid 0.01em lightseagreen;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.05), 2px 2px 3px 0 rgba(0, 0, 0, 0.05);      
+}
+
+#like:hover,
+#brain:hover,
+#like:focus,
+#brain:focus  {
+    background-color: lightseagreen;
+    cursor: pointer;
+    box-shadow: 0 0.5em 0.5em -0.4em lightskyblue ;
+    transform: translateY(-0.15em);
+    transition: 0.35s;
+}

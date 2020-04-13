@@ -1,0 +1,14 @@
+#post-title {
+    color: tomato;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 2em;
+}
+
+.nav-item {
+    color: #17a2b8;
+}
+
+a:hover {
+    color: #0a3c44;
+    text-decoration: none;
+}

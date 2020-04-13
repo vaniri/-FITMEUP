@@ -4,6 +4,7 @@ const db = require('../../models/index');
 const { handleUpDelRes } = require('./utils/utils.js');
 const expressJwt = require('express-jwt');
 const { jwtSecret } = require('../../utils/utils');
+const mongoose = require('mongoose');
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
@@ -55,7 +56,13 @@ router.route('/byid/:id')
         try {
             let post = await db.Post.findOne({ "_id": req.params.id }).lean();
             let comments = await db.Comment.find({ postItem: req.params.id }).populate("author").lean();
-            res.status(200).json({ ...post, comments });
+            let likes = await db.Likes.aggregate([
+                { $match: { postItem: mongoose.Types.ObjectId(req.params.id) } },
+                { $group: { _id: '$type', count: { $sum: 1 } } }
+            ]);
+            let likesObj = {};
+            likes.forEach(el => { likesObj[el._id] = el.count });
+            res.status(200).json({ ...post, comments, likesObj });
         } catch (err) {
             console.log("Error find post or comments", err);
             res.status(500).send(err);

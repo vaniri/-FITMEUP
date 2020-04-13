@@ -57,12 +57,12 @@ class CommentsContainer extends Component {
                 {this.state.comments.map(comment => (
                     <Row className="comment-container">
                         <Col className="comment">
-                            {<h5>{comment.author ? comment.author.username : "<no author>"}</h5>}
+                            {<h5 className="comment-author">{comment.author ? comment.author.username : "<no author>"}</h5>}
                             <p>{comment.body}</p>
                         </Col>
                     </Row>
                 ))}
-                <Row className="commentsForm-container" fluid="sm">
+                <Row id="commentsForm-container" fluid="sm">
                     <Col>
                         <form onSubmit={this.handleSubmit}>
                             <FormGroup controlId="comment" bsSize="large">

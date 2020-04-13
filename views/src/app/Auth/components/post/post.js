@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LikeButton from '../likes/likes';
 import './post.css';
 
 class PostContainer extends Component {
@@ -39,11 +40,12 @@ class PostContainer extends Component {
                     {this.state.posts.map(post => (
                         <Row className="posts-container">
                             <Col className="post">
-                                <h5 className="content">{post.title}</h5>
+                                <h5 id="post-title" >{post.title}</h5>
                                 <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
                                 <Col id="link-container">
-                                    <a href={`/postWithComments/${post._id}`}>read comments</a>
+                                    <LikeButton postItem={post._id} />
                                 </Col>
+    
                             </Col>
                         </Row>
                     ))}

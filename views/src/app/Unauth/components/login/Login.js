@@ -55,8 +55,8 @@ const LoginForm = props => {
                         required
                     />
                 </FormGroup>
-                <Button variant="info" block bsSize="large" type="submit">
-                    Login
+                <Button className="" variant="info" block bsSize="large" type="submit">
+                    Login 
                 </Button>
             </form>
         </div>

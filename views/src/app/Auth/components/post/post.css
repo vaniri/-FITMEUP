@@ -13,8 +13,9 @@
 }
 
 .post {
+    background-color: #ffffff8c;
     padding: 1.5em 0;
-    box-shadow: 0 2px 4px 0 rgba(223, 216, 216, 0.2), 0 3px 10px 0 rgba(145, 141, 141, 0.19);
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.05), 2px 2px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 #post-title {
@@ -36,3 +37,15 @@ a:hover {
     color: tomato;
     text-decoration: none;
 }
+
+
+img {
+    max-width: 500px;
+  }
+ 
+  #post-title {
+    color: tomato;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 2em;
+    
+  }

@@ -29,9 +29,7 @@ class UserContainer extends Component {
 
     render() {
         return (
-            <Row className="user-container">
-                <Col className="user">
-                    <Card style={{ width: '18rem' }}>
+                    <Card className="user-container" style={{ width: '18rem', border: "none" }}>
                         <Card.Body>
                             <Card.Title>User Info:</Card.Title>
                             <Card.Text>
@@ -39,13 +37,12 @@ class UserContainer extends Component {
                                 <h5>{this.state.username}</h5>
                                 <h5>{this.state.email}</h5>
                             </Card.Text>
+                            <hr />
                             <Col>
                                 <UploadImg handleSelection={image => this.setState({image})}/>
                             </Col>
                         </Card.Body>
                     </Card>
-                </Col>
-            </Row>
         )
     }
 }

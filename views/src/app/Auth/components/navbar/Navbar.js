@@ -7,10 +7,14 @@ import './Navbar.css';
 const NavBar = ({ location, logoutHandler }) => {
   return (
     <Navbar bg="dark" variant="dark" >
-      <Navbar.Brand href="/"><img id="logo" alt="logo" src="https://b.radikal.ru/b00/2004/6a/5f57a4a2c31a.png" />
+      <Navbar.Brand href="/"><img id="logo" alt="logo" src="https://thumbs.dreamstime.com/b/fitness-stuffed-avocado-isolated-cartoon-fitness-stuffed-avocado-isolated-cartoon-vector-illustration-146618689.jpg" />
       </Navbar.Brand>
+      <Nav.Item href="#/action-1">
+          <Link className={`nav_item ${location.pathname === '/' ? 'active' : ""}`} to='/home'>Home
+            </Link>
+        </Nav.Item>
       <Nav className="mr-auto"></Nav>
-      <Navbar.Brand id="" href=""><img className="avatar" alt="logo" src={localStorage.userImg} /></Navbar.Brand>
+      <Navbar.Brand href=""><img className="avatar" alt="logo" src={localStorage.userImg} /></Navbar.Brand>
       <NavDropdown title="click me" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#/action-1">
           <Link className={`nav_item ${location.pathname === '/newpost' ? 'active' : ""}`} to='/newpost'>New post
