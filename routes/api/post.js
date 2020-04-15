@@ -30,7 +30,7 @@ router.get('/all', async (req, res) => {
 
 router.get('/byuser/:id', async (req, res) => {
     try {
-        let posts = await db.Post.find({ author: req.params.id });
+        let posts = await db.Post.find({ author: req.params.id }).populate("author").lean();
         res.status(200).json({ posts });
     } catch (err) {
         res.status(500).send(err);
@@ -54,7 +54,7 @@ router.route('/byid/:id')
     })
     .get(async (req, res) => {
         try {
-            let post = await db.Post.findOne({ "_id": req.params.id }).lean();
+            let post = await db.Post.findOne({ "_id": req.params.id }).populate("author").lean();
             let comments = await db.Comment.find({ postItem: req.params.id }).populate("author").lean();
             let likes = await db.Likes.aggregate([
                 { $match: { postItem: mongoose.Types.ObjectId(req.params.id) } },
@@ -68,5 +68,15 @@ router.route('/byid/:id')
             res.status(500).send(err);
         }
     })
+
+router.get('/subs', async (req, res) => {
+        try {
+            await handleUpDelRes(db.Post.findByIdAndDelete(req.params.id), res);
+        } catch (err) {
+            res.status(500).send(err);
+        }
+})
+
+
 
 module.exports = router;

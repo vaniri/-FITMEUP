@@ -1,14 +1,13 @@
 import React from 'react';
 import UserContainer from '../../components/user/user';
-import PostsContainer from '../../components/post/post';
+import AllPosts from '../../components/AllPosts/AllPosts';
 import { Container } from 'react-bootstrap';
-
 
 const Profile = () => {
     return (
         <Container fluid="lr">
-           <UserContainer />
-           <PostsContainer
+           <UserContainer /*className={userProfContainer}*//>
+           <AllPosts
                 reqUrl={`http://localhost:3001/api/posts/byuser/${localStorage.userId}`}
                 reqType="multi"
                 />

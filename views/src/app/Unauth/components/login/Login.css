@@ -12,6 +12,6 @@
   .btn:hover,  .btn-info:hover,  .btn-block:hover,
   .btn:focus,  .btn-info:focus,  .btn-block:focus {
     box-shadow: inset 20em 0 0 0 tomato;
-    transition: 0.35s;
+    transition: 0.50s;
     border-color: tomato;
   }

@@ -32,8 +32,6 @@ const PostEditorComponent = () => {
             const res = await axios.post(`http://localhost:3001/api/posts/`,
                 { data: { title, content }, userId: localStorage.userId },
                 { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
-            console.log(1111111111111);
-            console.log(res);
             if (res.status === 201) {
                 console.log("Post successfully");
                 handlePost(res.data.postId);

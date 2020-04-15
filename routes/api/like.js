@@ -13,7 +13,7 @@ router.post('/', expressJwt({ secret: jwtSecret }),
             await db.Likes.create({ ...req.body, author: req.user.userId });
             res.status(201).json({});
         } catch (err) {
-            console.log("FAIL create a comemnt");
+            console.log("FAIL post a reaction");
             res.status(500).send(err);
         }
     });

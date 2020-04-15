@@ -1,11 +1,11 @@
 import React from 'react';
-import AllPosts from '../../components/AllPosts/AllPosts';
-import { Container } from 'react-bootstrap';
-import './Home.css';
+import AllPosts from '../../../Auth/components/AllPosts/AllPosts'
+import { Container } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const HomeAuth = () => {
+const Home = () => {
     return (
-        <Container fluid="lr">
+      <Container fluid="lr">
            <AllPosts
                 reqUrl={`http://localhost:3001/api/posts/byuser/${localStorage.userId}`}
                 reqType="multi"
@@ -14,5 +14,4 @@ const HomeAuth = () => {
     )
 }
 
-export default HomeAuth;
-
+export default Home; 
