@@ -93,3 +93,9 @@ a:active + #hiden {
 #hiden:active {
     display: block;
 }
+
+#del-bitton-container {
+    margin: 0;
+    margin-left: auto;
+}
+

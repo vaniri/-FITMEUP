@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaUserEdit } from 'react-icons/fa';
 import LikeButton from '../likesButton/likes';
 import UserContainer from '../user/user'
+import DeleteButton from '../deleteButton/deleteButton';
 import './post.css';
 
 class PostContainer extends Component {
@@ -42,6 +43,11 @@ class PostContainer extends Component {
                 {this.state.posts.map(post => (
                     <Row className="posts-container">
                         <Col className="post">
+                            <Col id="del-bitton-container">
+                                <DeleteButton
+                                    url={`http://localhost:3001/api/posts//byid/${post._id}`}
+                                    component="post" />
+                            </Col>
                             <h5 id="post-title" >{post.title}</h5>
                             <p id="post-author"><a href={`/profile/${post.author._id}`}><FaUserEdit /> {post.author.username}</a>
                                 <div id="hiden"><UserContainer userId={post.author._id} /></div>
