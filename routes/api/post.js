@@ -38,16 +38,21 @@ router.get('/byuser/:id', async (req, res) => {
 });
 
 router.route('/byid/:id')
-    .patch(async (req, res) => {
+    .patch(expressJwt({ secret: jwtSecret }), async (req, res) => {
         try {
             await handleUpDelRes(db.Post.findfindByIdAndUpdate(req.params.id, req.body), res);
         } catch (err) {
             res.status(500).send(err);
         }
     })
-    .delete(async (req, res) => {
+    .delete(expressJwt({ secret: jwtSecret }), async (req, res) => {
         try {
-            await handleUpDelRes(db.Post.findByIdAndDelete(req.params.id), res);
+            let post = await db.Post.findById(req.params.id);
+            if (post.author == req.user.userId) {
+                await handleUpDelRes(db.Post.findByIdAndDelete(req.params.id), res);
+            } else {
+                res.status(403).send();       
+            }
         } catch (err) {
             res.status(500).send(err);
         }

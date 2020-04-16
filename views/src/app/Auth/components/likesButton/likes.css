@@ -1,3 +1,12 @@
+#likes-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 0 auto;
+    text-align: center;
+    width: 10%;
+    height: auto;
+}
+
 #like, 
 #brain{
     -webkit-font-smoothing: antialiased;
@@ -14,9 +23,9 @@
 #brain:hover,
 #like:focus,
 #brain:focus  {
-    background-color: lightseagreen;
+    color: lightseagreen;
     cursor: pointer;
-    box-shadow: 0 0.5em 0.5em -0.4em lightskyblue ;
+    box-shadow: 0 0.5em 0.5em -0.4em lightseagreen ;
     transform: translateY(-0.15em);
     transition: 0.35s;
 }

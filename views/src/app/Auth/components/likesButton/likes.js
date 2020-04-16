@@ -27,7 +27,7 @@ const LikeButton = ({ postItem, likesObj }) => {
     }
 
     return (
-        <div>
+        <div id="likes-container">
         <button fas fa-head-side-brain id="like" block size='small' type="submit" onClick={() => sendReaction('like')}>
         <FaRegThumbsUp />
         </button>
