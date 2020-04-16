@@ -1,3 +1,9 @@
+#post-title {
+    color: tomato;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 2em;
+}
+
 .posts-container {
     position: relative;
     margin: 1em auto;
@@ -49,7 +55,7 @@ a:hover {
     text-decoration: none;
 
 }
-
+ 
   #post-title {
     color: tomato;
     font-family: "Lato";
@@ -58,34 +64,18 @@ a:hover {
     
   }
 
- .reaction {
-      display: inline;
-      color: tomato;
-      font-size: 15px;
-      margin: 0 0.3em;
-      width: 40px;
-      height: 20px;
-      font-size: 15px;
-      background: transparent;
-      border: none;
-    
-  }
-
   a{
       color: lightseagreen;
   }
 
-  a:hover {
+  a:hover{
     color: rgb(83, 95, 94);
 }
 
-#hiden{
-    display: none;
-}
-    
-a:hover + #hiden,
-a:hover + #hiden,
-a:active + #hiden {
+
+#author-link:hover + #hiden,
+#author-link:hover + #hiden,
+#author-link:active + #hiden {
     display: block;
 }
 
@@ -93,9 +83,3 @@ a:active + #hiden {
 #hiden:active {
     display: block;
 }
-
-#del-bitton-container {
-    margin: 0;
-    margin-left: auto;
-}
-

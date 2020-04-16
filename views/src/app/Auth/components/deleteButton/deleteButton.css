@@ -1,0 +1,13 @@
+#delete-bitton {
+    margin: 0;
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    padding: 0.5em;
+}
+
+#delete-bitton:hover {
+    color: tomato;  
+    border: solid 0.01em tomato; 
+}

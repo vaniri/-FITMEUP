@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 });
 
 router.route('/:id')
-    .get( async (req, res) => {
+    .get(async (req, res) => {
         try {
             let user = await db.User.findOne({ _id: req.params.id }).lean();
             delete user.password;
@@ -32,6 +32,7 @@ router.route('/:id')
     })
     .patch(async (req, res) => {
         try {
+            console.log(req.body);
             await handleUpDelRes(db.User.findByIdAndUpdate(req.params.id, req.body), res);
         } catch (err) {
             checkDupErr(err, res);
@@ -45,12 +46,10 @@ router.route('/:id')
         }
     });
 
-
 router.post('/login', async (req, res) => {
     console.log("got login request", req.body);
     try {
         let userRecord = await db.User.findOne({ email: req.body.email });
-        console.log("found user", userRecord);
         if (!userRecord) {
             console.log("User not found");
             res.status(401).send();
@@ -66,7 +65,7 @@ router.post('/login', async (req, res) => {
         }
 
         console.log("Login Successful!");
-        res.status(200).json({ userId: userRecord.id, token: generateToken(userRecord.id) });
+        res.status(200).json({ userId: userRecord.id, token: generateToken(userRecord.id), username: userRecord.username, userImg: userRecord.image });
     } catch (err) {
         console.log("Error logging in: ", err);
         res.status(401).send(err);

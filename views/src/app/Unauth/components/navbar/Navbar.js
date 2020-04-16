@@ -2,24 +2,20 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './Navbar.css';
 
 const NavBar = ({ location }) => {
     return (
-        <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home"> <img id="logo" alt="logo" src="https://b.radikal.ru/b00/2004/6a/5f57a4a2c31a.png" />
-            </Navbar.Brand>
-            <Nav className="mr-auto">
-                <Nav.Link href="#pricing">
-                    <Link className={`nav_item ${location.pathname === '/' ? 'active' : ""}`} to='/'>Home
-                </Link>
-                </Nav.Link>
-                <Nav.Link>
-                    <Link className={`nav_item ${location.pathname === '/posts' ? 'active' : ""}`} to='/posts'>Posts
+      <Navbar bg="light" variant="light">
+        <Nav.Link href="/"><Link id="logo" className={`nav_item ${location.pathname === '/' ? 'active' : ""}`} to='/'>FITMEUP
+                </Link></Nav.Link>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="justify-content-end">
+          <Nav.Link>
+          <Link className={`nav_item ${location.pathname === '/posts' ? 'active' : ""}`} to='/posts'>Posts
                     </Link>
-                </Nav.Link>
-            </Nav>
-        </Navbar>
+          </Nav.Link>
+        </Navbar.Collapse>
+      </Navbar>
     )
 }
 

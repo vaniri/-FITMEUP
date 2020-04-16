@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Col, Row, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UploadImg from '../../components/uploadImg/uploadImg';
+import SubsButton from '../subsButton/subsButton';
 import './user.css';
 
 class UserContainer extends Component {
     constructor(props) {
         super(props);
-        this.state = ({});
+        this.state = {};
     }
 
     getUserData = async () => {
-        console.log(localStorage.userId);
-        const res = await axios.get(`http://localhost:3001/api/users/${localStorage.userId}`);
-        console.log(res.data);
+        const res = await axios.get(`http://localhost:3001/api/users/${this.props.userId || localStorage.userId}`);
         if (res.status === 200) {
             this.setState(res.data.user);
         }
@@ -30,20 +30,28 @@ class UserContainer extends Component {
 
     render() {
         return (
-                <Row className="user-container">
-                    <Col className="user">
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Body>
-                                <Card.Title>User Info:</Card.Title>
-                                <Card.Text>
-                                    <img className="user-img" alt="user avatar" src={this.state.image || "https://www.pepper.ru/assets/img/profile-placeholder_f56af.png"} />
-                                    <h5>{this.state.username}</h5>
-                                    <h5>{this.state.email}</h5>
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                </Row>
+            <Card className="user-container" style={{ width: '18rem', border: "none" }}>
+                <Card.Body>
+                    <Card.Title>User Info:</Card.Title>
+                    <Card.Text>
+                        <img className="user-img" alt="user avatar" src={this.state.image || "https://www.pepper.ru/assets/img/profile-placeholder_f56af.png"} />
+                        <h5>{this.state.username}</h5>
+                        <h5>{this.state.email}</h5>
+                        {
+                            localStorage.token && localStorage.userId !== this.state._id ?
+                                (<SubsButton tgtUser={this.state._id}></SubsButton>) : (<div></div>)
+                        }
+                    </Card.Text>
+                    {
+                        !this.props.userId ?
+                            (<Col>
+                                <hr />
+                                <UploadImg handleSelection={image => this.setState({ image })} />
+                            </Col>) :
+                            (<div></div>)
+                    }
+                </Card.Body>
+            </Card>
         )
     }
 }

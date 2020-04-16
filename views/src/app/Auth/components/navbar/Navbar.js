@@ -1,32 +1,31 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Dropdown, DropdownButton, Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Button, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css';
 
 const NavBar = ({ location, logoutHandler }) => {
   return (
-    <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="#home"><img id="logo" alt="logo" src="https://b.radikal.ru/b00/2004/6a/5f57a4a2c31a.png" />
-      </Navbar.Brand>
-      <Nav className="mr-auto">
-        <Nav.Link href="#pricing">
-          <Link className={`nav_item ${location.pathname === '/' ? 'active' : ""}`} to='/'>Home
+    <Navbar bg="dark" variant="dark" >
+      <Nav.Item href="#/action-1">
+      <Link id="logo" className={`nav_item ${location.pathname === '/' ? 'active' : ""}`} to='/home'>FITMEUP
+      </Link>
+      </Nav.Item>
+      <Nav className="mr-auto"></Nav>
+      <Navbar.Brand href=""><img className="avatar" alt="logo" src={localStorage.userImg} /></Navbar.Brand>
+      <NavDropdown title="click me" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="#/action-1">
+          <Link className={`nav_item ${location.pathname === '/newpost' ? 'active' : ""}`} to='/newpost'>New post
             </Link>
-        </Nav.Link>
-        <DropdownButton className="pull-right" id="dropdown-basic-button" title="click me">
-          <Dropdown.Item href="#/action-1">
-            <Link className={`nav_item ${location.pathname === '/newpost' ? 'active' : ""}`} to='/newpost'>New post
+        </NavDropdown.Item>
+        <NavDropdown.Item href="#/action-2">
+          <Link className={`nav_item ${location.pathname === '/profile' ? 'active' : ""}`} to='/profile'>My page
             </Link>
-          </Dropdown.Item>
-          <Dropdown.Item href="#/action-2">
-            <Link className={`nav_item ${location.pathname === '/profile' ? 'active' : ""}`} to='/profile'>My page
-            </Link>
-          </Dropdown.Item>
-          <Dropdown.Item variant="outline-info"><button type="submit" onClick={logoutHandler}>Log out</button>
-          </Dropdown.Item>
-        </DropdownButton>
-      </Nav>
+        </NavDropdown.Item>
+        <div id="logout-container">
+          <Button id="logout-button" type="submit" onClick={logoutHandler}>Log out</Button>
+        </div>
+      </NavDropdown>
     </Navbar>
   )
 }

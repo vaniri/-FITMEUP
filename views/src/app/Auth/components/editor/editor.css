@@ -1,0 +1,18 @@
+.container-sm {
+margin: 3em auto;;
+}
+
+.editor-container {
+    position: relative;
+    margin: 1em auto;
+}
+
+#post-button{
+    width: 25%;
+    margin: 1em auto;
+}
+
+input {
+    width: 100%;
+    padding: 0.5em;
+}
