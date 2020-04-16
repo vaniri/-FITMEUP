@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import axios from 'axios';
 import 'suneditor/dist/css/suneditor.min.css';
 import SunEditor, { buttonList, } from "suneditor-react";
@@ -76,4 +76,3 @@ const PostEditorComponent = () => {
 }
 
 export default PostEditorComponent;
-
