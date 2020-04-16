@@ -1,17 +1,82 @@
 @media all and (min-width: 480px) {
-    .Login {
-      padding: 60px 0;
-    }
-  
-    .Login form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
+  .Login {
+    padding: 60px 0;
   }
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
 
-  .btn:hover,  .btn-info:hover,  .btn-block:hover,
-  .btn:focus,  .btn-info:focus,  .btn-block:focus {
-    box-shadow: inset 20em 0 0 0 tomato;
-    transition: 0.50s;
-    border-color: tomato;
+#logReg-container {
+  background-color: #ffff;
+    padding: 0.5em;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.05), 2px 2px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn, .btn-info, .btn-block {
+  background-color: transparent;
+  color: royalblue;
+  border-color: royalblue;
+  font-weight: 400;
+  font-family: 'Lato';
+  width: 30%;
+  margin: auto;
+  
+}
+
+.btn:hover, .btn-info:hover, .btn-block:hover {
+  background-color: rgb(30, 49, 104);
+  color: tomato
+}
+
+@keyframes bg {
+  0% {
+    background-size: 0 3px, 3px 0, 0 3px, 3px 0;
   }
+  25% {
+    background-size: 100% 3px, 3px 0, 0 3px, 3px 0;
+  }
+  50% {
+    background-size: 100% 1px, 1px 100%, 0 1px, 1px 0;
+  }
+  75% {
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 0;
+  }
+  100% {
+    background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
+  }
+}
+
+.btn-info:hover {
+  background-color: transparent;
+  color: tomato;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, royalblue 100%, royalblue 100%), linear-gradient(to bottom, royalblue 100%, royalblue 100%), linear-gradient(to right, royalblue 100%, royalblue 100%), linear-gradient(to bottom, royalblue 100%, royalblue 100%);
+  background-size: 100% 20px, 20px 100%, 100% 20px, 20px 100%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  animation: bg 0.80s cubic-bezier(0.19, 1, 0.22, 1) 1;
+  animation-play-state: paused;
+}
+
+.btn-info:hover {
+  animation-play-state: running;
+}
+
+#logReg-container {
+  width: 30%;
+  margin: 2em auto;
+}
+
+h5 {
+  text-align: center;
+  font-size: 20px;
+  color: tomato;
+  margin: 1em auto;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid #ced4da;
+}

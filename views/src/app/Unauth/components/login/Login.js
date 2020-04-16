@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl } from "react-bootstrap";
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaArrowRight } from "react-icons/fa";
 import axios from 'axios';
 import "./Login.css";
 
@@ -39,7 +40,7 @@ const LoginForm = props => {
                 <FormGroup controlId="email" bsSize="large">
                     <FormControl
                         autoFocus
-                        placeholder="email"
+                        placeholder="email:"
                         type="email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
@@ -55,9 +56,12 @@ const LoginForm = props => {
                         required
                     />
                 </FormGroup>
+                <div id="logo-div">
                 <Button className="" variant="info" block bsSize="large" type="submit">
-                    Login 
+                    Login <FaArrowRight />
                 </Button>
+                </div>
+                
             </form>
         </div>
     );

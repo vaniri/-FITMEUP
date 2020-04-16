@@ -23,6 +23,13 @@
 #leave-comment {
 width: 30%;
 margin: 1em auto;
+color: royalblue;
+border-color: royalblue;
+}
+
+#leave-comment:hover {
+background-color: royalblue;
+color: white
 }
 
 .comment-container  {

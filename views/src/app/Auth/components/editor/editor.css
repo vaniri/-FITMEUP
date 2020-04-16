@@ -16,3 +16,13 @@ input {
     width: 100%;
     padding: 0.5em;
 }
+
+#post-button {
+    color: royalblue;
+    border-color: royalblue;
+}
+
+#post-button:hover {
+    background-color: royalblue;
+    color: white
+}

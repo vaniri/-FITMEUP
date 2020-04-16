@@ -7,18 +7,18 @@
     margin-left: 0;
     color: black;
     overflow: hidden;
-    background-color: slateblue;
+    background-color: royalblue;
 }
 
 .nav_item, .nav-link {
-    color: #17a2b8;
+    color: royalblue;
     text-decoration: none;
     background-color: transparent;
     margin: 0 1em;
 }
 
 .nav-link:hover {
-    color: #71b4be;
+    color: rgb(40, 68, 150);
     text-decoration: none;
 }
 
@@ -38,9 +38,14 @@
     color: transparent;
     animation: rainbow_animation 25s ease-in-out infinite;
     background-size: 400% 100%;
-    font-size: 30px;
-    font-family:  'Comfortaa', cursive;;
+    font-size: 25px;
+    font-family:  'Comfortaa', cursive;
     letter-spacing: 2px;
+    padding: 0.5em;
+}
+
+svg {
+    width: 17px;
 }
 
 @keyframes rainbow_animation {
@@ -53,17 +58,18 @@
 }
 
 #logo:hover{
-    color: lightseagreen;
+    color: royalblue;
 }
 
 #collasible-nav-dropdown {
-    color: #17a2b8 !important;
+    color: royalblue !important;
     background-color: transparent;
-    border: solid 0.01em #17a2b8;
+    border: solid 0.01em royalblue;
 }
 
 #collasible-nav-dropdown:hover {
     border: none;
+    color: rgb(40, 68, 150);
 }
 
 #logout-container {
@@ -75,6 +81,7 @@
     color: tomato;
     background-color: transparent;
     border-color: tomato;
+    width: 70%
 }
 
 #logout-button:hover {
@@ -96,3 +103,19 @@
     cursor: pointer;
     color: tomato;
 }
+
+.nav-item {
+font-size: 16px;
+margin-top: 0.5em;
+font-family:  'Comfortaa', cursive;
+margin-right: 1em;
+}
+
+.nav-link:hover {
+    border: solid 0.01em royalblue;
+}
+
+.navbar-brand {
+    margin-left: auto;
+}
+

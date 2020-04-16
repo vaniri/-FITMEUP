@@ -36,8 +36,8 @@
 
 img {
     height: auto;
-    max-width: 100%;
     margin: auto;
+    width: 2000px;
 }
 
 #link-container{
@@ -52,9 +52,11 @@ a:hover {
 
   #post-title {
     color: tomato;
-    font-family: "Lato";
-    font-size: 2em;
-    font-weight: 300;
+    font-family: 'Comfortaa', cursive;
+    font-size: 28px;
+    font-weight: 100;
+    text-align: center;
+    margin: 1em 3em 2em 3em;
     
   }
 
@@ -72,11 +74,11 @@ a:hover {
   }
 
   a{
-      color: lightseagreen;
+      color: royalblue;
   }
 
   a:hover {
-    color: rgb(83, 95, 94);
+    color: rgb(40, 68, 150);
 }
 
 #hiden{

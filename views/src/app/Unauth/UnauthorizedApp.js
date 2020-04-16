@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
 import NavBar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
-import AllPosts from './pages/home/AllPosts'
+import LogRegForms from './pages/LogRes/LogReg'
 import PostWithComments from '../Auth/pages/postWithComments/postWithComm'
 
 function UnauthorizedApp ({ loginHandler }) {
@@ -19,14 +19,14 @@ function UnauthorizedApp ({ loginHandler }) {
             <div>
                 <NavBar />
                 <Switch>
-                    <Route path="/posts">
-                        <AllPosts />
+                    <Route path="/logIn">
+                        <LogRegForms loginHandler={loginHandler} />
                     </Route>
                     <Route path="/postWithComments/:postItem">
                         <PostWithCommentsProx />
                     </Route>
                     <Route path="/">
-                        <Home loginHandler={loginHandler} />
+                        <Home />
                     </Route>
                 </Switch>
             </div>

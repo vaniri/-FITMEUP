@@ -37,7 +37,7 @@ class AllPosts extends Component {
                             <h5 id="post-title" >{post.title} </h5>
                             <p id="post-author">
                                 <a id="author-link" href={`/profile/${post.author._id}`}><FaUserEdit /> {post.author.username}</a>
-                                <div id="hiden"><UserContainer /*className={userContainer}*/ userId={post.author._id} /></div>
+                                <div id="hiden"><UserContainer userId={post.author._id} /></div>
                             </p>
                             <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
                             <Col id="link-container">

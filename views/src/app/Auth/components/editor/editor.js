@@ -67,7 +67,7 @@ const PostEditorComponent = () => {
                                 buttonList: buttonList.complex
                             }} />
                             <Col>
-                        <Button id="post-button" variant="info" block size="sm" type="submit" onClick={sendPost}>POST</Button>
+                        <Button id="post-button" variant="primary" block size="sm" type="submit" onClick={sendPost}>POST</Button>
                         </Col>
                     </Col>
                 </Row>

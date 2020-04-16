@@ -1,13 +1,16 @@
 import React from 'react';
-import LoginForm from '../../components/login/Login';
-import RegisterForm from '../../components/register/Register';
+import AllPosts from '../../../Auth/components/AllPosts/AllPosts'
+import { Container } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Home = ({ loginHandler }) => {
+const Home = () => {
     return (
-        <div>
-            <LoginForm loginHandler={loginHandler} />
-            <RegisterForm loginHandler={loginHandler} />
-        </div>
+      <Container fluid="lr">
+           <AllPosts
+                reqUrl={`http://localhost:3001/api/posts/byuser/${localStorage.userId}`}
+                reqType="multi"
+                />
+        </Container>
     )
 }
 

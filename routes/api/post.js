@@ -69,14 +69,17 @@ router.route('/byid/:id')
         }
     })
 
-router.get('/subs', async (req, res) => {
+router.get('/subs', expressJwt({ secret: jwtSecret }),
+    async (req, res) => {
         try {
-            await handleUpDelRes(db.Post.findByIdAndDelete(req.params.id), res);
+            let rawFriends = await db.Subs.find({ srcUser: req.user.userId }).lean();
+            let friends = rawFriends.map(({ tgtUser }) => tgtUser);
+            let friendsPosts = await db.Post.find({'author': { $in: friends }}).populate('author').lean();
+            res.status(200).json(friendsPosts);
         } catch (err) {
+            console.log(err);
             res.status(500).send(err);
         }
 })
-
-
 
 module.exports = router;

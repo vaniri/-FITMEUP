@@ -6,6 +6,7 @@ import Profile from './pages/Profile/Profile';
 import PostEditor from './pages/editor/posteditor';
 import PostWithComments from './pages/postWithComments/postWithComm'
 import ProfileId from './pages/ProfileId/profileId';
+import AllUsersPosts from './pages/allPosts';
 
 function AuthorizedApp({ logoutHandler }) {
     let PostWithCommentsProx = () => {
@@ -38,6 +39,9 @@ function AuthorizedApp({ logoutHandler }) {
                     </Route>
                     <Route path="/postWithComments/:postItem">
                         <PostWithCommentsProx />
+                    </Route>
+                    <Route path="/allposts">
+                        <AllUsersPosts />
                     </Route>
                     <Route path="/">
                         <Home />

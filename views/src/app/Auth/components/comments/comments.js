@@ -58,7 +58,7 @@ class CommentsContainer extends Component {
                     {this.state.comments.map(comment => (
                         <Row className="comment-container">
                             <Col className="comment">
-                                {<h5 className="comment-author">{comment.author ? comment.author.username : "<no author>"}</h5>}
+                                {<h6 className="comment-author">{comment.author ? comment.author.username : "<no author>"}</h6>}
                                 <p>{comment.body}</p>
                             </Col>
                         </Row>
@@ -74,7 +74,7 @@ class CommentsContainer extends Component {
                                             type="text"
                                         />
                                     </FormGroup>
-                                    <Button id="leave-comment" block bsSize="large" type="submit">Leave Comment
+                                    <Button id="leave-comment" variant="primary" block bsSize="large" type="submit">Leave Comment
                             </Button>
                                 </form>
                             </Col>

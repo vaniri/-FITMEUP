@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
+import { FaArrowRight } from "react-icons/fa";
 import axios from 'axios';
 
 const RegisterForm = props => {
@@ -64,7 +65,7 @@ const RegisterForm = props => {
                     />
                 </FormGroup>
                 <Button variant="info" block size="large" type="submit">
-                    Create Account
+                    Send <FaArrowRight />
                 </Button>
             </form>
         </div>
