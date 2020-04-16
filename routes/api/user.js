@@ -32,7 +32,7 @@ router.route('/:id')
     })
     .patch(async (req, res) => {
         try {
-            console.log(req.body);
+            console.log(`[DEBUG] PATCH /users/${id} :: ${req.body}`);
             await handleUpDelRes(db.User.findByIdAndUpdate(req.params.id, req.body), res);
         } catch (err) {
             checkDupErr(err, res);
