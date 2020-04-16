@@ -76,4 +76,3 @@ const PostEditorComponent = () => {
 }
 
 export default PostEditorComponent;
-
