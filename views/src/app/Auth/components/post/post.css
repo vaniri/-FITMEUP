@@ -3,7 +3,7 @@
     margin: 1em auto;
 }
 
-.content, .post, #post-author{
+.content, .post, .post-author {
     height: auto;
     max-width: 80%;
     margin: auto;
@@ -12,12 +12,14 @@
     margin-bottom: 1em;
 }
 
-#post-author{ 
-    color: lightseagreen;
-
+.post-author {
+    color: royalblue;
+    margin: 2em auto;
+    
 }
-#post-author:hover {
-    color: rgb(18, 92, 88);
+
+.post-author:hover {
+    color: rgb(35, 59, 131);
     cursor: pointer;
 }
 
@@ -27,8 +29,8 @@
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.05), 2px 2px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
-#post-title {
-    text-align: center;    
+.post-title {
+    text-align: center;
     margin-bottom: 1em;
     font-size: 20px;
     font-weight: 200;
@@ -40,59 +42,51 @@ img {
     width: 2000px;
 }
 
-#link-container{
+#link-container {
     text-align: center;
 }
 
 a:hover {
     color: tomato;
     text-decoration: none;
-
 }
 
-  #post-title {
+.post-title {
     color: tomato;
-    font-family: 'Comfortaa', cursive;
-    font-size: 28px;
-    font-weight: 100;
-    text-align: center;
-    margin: 1em 3em 2em 3em;
-    
-  }
+    font-family: "Lato";
+    font-size: 25px;
+    font-weight: 300;
+}
 
- .reaction {
-      display: inline;
-      color: tomato;
-      font-size: 15px;
-      margin: 0 0.3em;
-      width: 40px;
-      height: 20px;
-      font-size: 15px;
-      background: transparent;
-      border: none;
-    
-  }
+.reaction {
+    display: inline;
+    color: tomato;
+    font-size: 15px;
+    margin: 0 0.3em;
+    width: 40px;
+    height: 20px;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+}
 
-  a{
-      color: royalblue;
-  }
+a {
+    color: royalblue;
+}
 
-  a:hover {
+a:hover {
     color: rgb(40, 68, 150);
 }
 
-#hiden{
+.hiden {
     display: none;
 }
-    
-a:hover + #hiden,
-a:hover + #hiden,
-a:active + #hiden {
+
+a:hover+.hiden, a:hover+.hiden, a:active+.hiden {
     display: block;
 }
 
-#hiden:hover,
-#hiden:active {
+.hiden:hover, .hiden:active {
     display: block;
 }
 
@@ -100,4 +94,3 @@ a:active + #hiden {
     margin: 0;
     margin-left: auto;
 }
-

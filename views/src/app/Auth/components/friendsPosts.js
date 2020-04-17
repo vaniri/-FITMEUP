@@ -35,9 +35,10 @@ class FriendsPosts extends Component {
                 {this.state.posts.map(post => (
                     <Row className="posts-container">
                         <Col className="post">
-                            <h5 id="post-title" >{post.title}</h5>
-                            <p id="post-author"><a href={`/profile/${post.author._id}`}><FaUserEdit /> {post.author.username}</a>
-                                <div id="hiden"><UserContainer userId={post.author._id} /></div>
+                            <h5 className="post-title" >{post.title}</h5>
+                            <p className="post-author"><a href={`/profile/${post.author._id}`}><FaUserEdit /> {post.author.username}</a>
+                                <div className="hiden"><UserContainer userId={post.author._id} /></div>
+                                <p className="comment-date">posted: {post.posted.toString().slice(0, 10)}</p>
                             </p>
                             <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
                             <Row>

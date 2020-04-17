@@ -5,6 +5,8 @@
     margin: auto;
     text-align: justify;
     background-color: #ffffff8c;
+    display: grid;
+    grid-template-columns: 20% 70%;
 }
 
 #commentsForm-container {
@@ -38,15 +40,26 @@ color: white
     padding: 0.8em 0;
 }
 
-
-
 .post {
     padding: 1.5em 0;
     box-shadow: 0 2px 4px 0 rgba(223, 216, 216, 0.2), 0 3px 10px 0 rgba(145, 141, 141, 0.19);
 }
 
-.comment-author {
+.comment-author{
     color: royalblue;
     font-weight: 600;
-    margin-bottom: 1em;
+    letter-spacing: 0.05em;
+    font-size: 17px;
+    margin: 0;
+}
+
+.comment{
+    border: solid 0.01em #d0cdcd;
+    padding: 1em;
+    margin: 1em 0.5em;
+}
+
+.comment-date {
+    font-size: 13px;
+    color: gray;
 }
