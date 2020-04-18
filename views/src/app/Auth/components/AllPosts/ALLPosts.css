@@ -9,7 +9,7 @@
     margin: 1em auto;
 }
 
-.content, .post, #post-author{
+.content, .post, .post-author{
     height: auto;
     max-width: 80%;
     margin: auto;
@@ -18,26 +18,17 @@
     margin-bottom: 1em;
 }
 
-#post-author{ 
-    color: lightseagreen;
-
-}
-#post-author:hover {
-    color: rgb(18, 92, 88);
-    cursor: pointer;
-}
-
 .post {
     background-color: #ffffff8c;
     padding: 1.5em 0;
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.05), 2px 2px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
-#post-title {
+.post-title {
     text-align: center;    
     margin-bottom: 1em;
-    font-size: 20px;
-    font-weight: 200;
+    font-size: 25px;
+    font-weight: 300;
 }
 
 img {
@@ -55,31 +46,5 @@ a:hover {
     text-decoration: none;
 
 }
- 
-  #post-title {
-    color: tomato;
-    font-family: "Lato";
-    font-size: 2em;
-    font-weight: 300;
-    
-  }
-
-  a{
-      color: lightseagreen;
-  }
-
-  a:hover{
-    color: rgb(83, 95, 94);
-}
 
 
-#author-link:hover + #hiden,
-#author-link:hover + #hiden,
-#author-link:active + #hiden {
-    display: block;
-}
-
-#hiden:hover,
-#hiden:active {
-    display: block;
-}

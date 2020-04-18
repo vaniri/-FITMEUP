@@ -4,14 +4,14 @@ import axios from 'axios';
 import { FaRegTrashAlt } from "react-icons/fa";
 import './deleteButton.css';
 
-const DeleteButton = ({ url, component }) => {
+const DeleteButton = ({ url, component, postaAthorId }) => {
 
     const history = useHistory();
 
     let removeContent = async () => {
         try {
-            const res = await axios.delete(url, 
-                { headers: { 'Authorization': `Bearer ${localStorage.token}` }});
+            const res = await axios.delete(url,
+                { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             if (res.status === 204) {
                 console.log(`${component} delete succsessfuly`);
                 history.push('/');
@@ -26,9 +26,11 @@ const DeleteButton = ({ url, component }) => {
 
     return (
         <div id="animation-delete">
-            <button id="delete-bitton" type="submit" onClick={removeContent}>
-                <FaRegTrashAlt />
-            </button>
+            {localStorage.userId === postaAthorId ?
+                (<button id="delete-bitton" type="submit" onClick={removeContent}>
+                    <FaRegTrashAlt />
+                </button>) : (<div></div>)
+            }
         </div>
     )
 }

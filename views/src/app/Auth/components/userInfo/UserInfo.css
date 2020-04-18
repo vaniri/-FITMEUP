@@ -1,0 +1,15 @@
+.friend-container {
+    display: grid;
+    margin: auto;
+}
+
+.friend {
+    text-align: center;
+    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.05), 0 3px 10px 0 rgba(145, 141, 141, 0.19);
+    margin-bottom: 1em;
+}
+
+#friends-list {
+    display: grid;
+}
+

@@ -52,13 +52,16 @@ class CommentsContainer extends Component {
     }
 
     render() {
+        console.log(this.state.comments)
         return (
             <div>
                 <Container fluid="sm">
                     {this.state.comments.map(comment => (
                         <Row className="comment-container">
+                            <img className="user-img" src={comment.author.image}/>
                             <Col className="comment">
-                                {<h6 className="comment-author">{comment.author ? comment.author.username : "<no author>"}</h6>}
+                    {<p className="comment-author">{comment.author ? comment.author.username : "<no author>"}</p>}
+                    <p className="comment-date" >posted: {comment.posted.toString().slice(0, 10)}</p>
                                 <p>{comment.body}</p>
                             </Col>
                         </Row>

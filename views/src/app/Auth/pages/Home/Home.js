@@ -6,6 +6,7 @@ import './Home.css';
 const HomeAuth = () => {
     return (
         <Container fluid="lr">
+            <h4>YOUR FRIENDS POSTS:</h4>
             < FriendsPosts />
         </Container>
     )

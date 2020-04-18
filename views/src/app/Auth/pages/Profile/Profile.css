@@ -1,5 +1,8 @@
-.container-lr {
-    margin: 3em 4em;
+#profile-container {
     text-align: justify;
+    display: grid;
+    grid-template-columns: 20% 55% 20%;
+    width: 100%;
+    margin: 0;
 }
 
