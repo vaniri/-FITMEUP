@@ -6,19 +6,19 @@
     text-align: justify;
     background-color: #ffffff8c;
     display: grid;
-    grid-template-columns: 20% 70%;
+    grid-template-columns: 20% 73%;
 }
 
 #commentsForm-container {
     background-color: #ffffff8c;
     max-width: 80%;
-    margin: 1em auto;
+    margin: 1.5em auto;
 }
  
 #comment-form {
     height: 150px;
     width: 70%;
-    margin: 1em auto;
+    margin: 1.5em auto;
     max-width: 80%;
 }
 

@@ -1,3 +1,7 @@
+.navbar-expand {
+    padding: 0;
+}
+
 .nav_menu {
     position: relative;
     padding: 0.05rem 1rem;

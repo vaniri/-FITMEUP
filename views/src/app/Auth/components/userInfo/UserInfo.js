@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { FaUser, FaEnvelope} from "react-icons/fa";
 import { apiUrl } from '../../../utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './UserInfo.css';
@@ -43,8 +44,8 @@ class UserInfo extends Component {
                                     <Card.Text>
                                         <img className="user-img" alt="user avatar" src={friend.image} />
                                         <hr />
-                                        <p className="friend-author"><a href={`/profile/${friend.userId}`}>{friend.username}</a></p>
-                                        <p>{friend.email}</p>
+                                        <p className="friend-author"><FaUser /> <a href={`/profile/${friend.userId}`}>{friend.username}</a></p>
+                                        <p><FaEnvelope /> {friend.email}</p>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

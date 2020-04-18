@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"fitmeup.likes"},{"v":{"$numberInt":"2"},"unique":true,"key":{"type":{"$numberInt":"1"},"author":{"$numberInt":"1"},"postItem":{"$numberInt":"1"}},"name":"type_1_author_1_postItem_1","ns":"fitmeup.likes","background":true}],"uuid":"8aabc814d3f8489794d4afc36dd816a0"}

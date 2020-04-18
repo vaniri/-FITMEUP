@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Col, Row, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaUser, FaEnvelope} from "react-icons/fa";
 import UploadImg from '../../components/uploadImg/uploadImg';
 import SubsButton from '../subsButton/subsButton';
 import './user.css';
@@ -39,8 +40,8 @@ class UserContainer extends Component {
                     <Card.Title>User Info:</Card.Title>
                     <Card.Text>
                         <img className="user-img" alt="user avatar" src={this.state.image || "https://www.pepper.ru/assets/img/profile-placeholder_f56af.png"} />
-                        <h5>{this.state.username}</h5>
-                        <h5>{this.state.email}</h5>
+                        <h6><FaUser /> {this.state.username}</h6>
+                        <h7><FaEnvelope /> {this.state.email}</h7>
                         {
                             localStorage.token && localStorage.userId !== this.state._id ?
                                 (<SubsButton tgtUser={this.state._id}></SubsButton>) : (<div></div>)
