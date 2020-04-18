@@ -6,6 +6,7 @@ import { FaUserEdit, FaRegCommentDots } from 'react-icons/fa';
 import LikeButton from '../likesButton/likes';
 import UserContainer from '../user/user'
 import DeleteButton from '../deleteButton/deleteButton';
+import { apiUrl } from '../../../utils';
 import './post.css';
 
 class PostContainer extends Component {
@@ -37,7 +38,7 @@ class PostContainer extends Component {
                         <Col className="post">
                             <Col id="del-bitton-container">
                                 <DeleteButton
-                                    url={`http://localhost:3001/api/posts//byid/${this.state.post._id}`}
+                                    url={apiUrl(`/api/posts/byid/${this.state.post._id}`)}
                                     component="post"
                                     postAuthorId={this.state.post.author._id}
                                 />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Button, FormGroup, FormControl } from 'react-bootstrap';
+import { apiUrl } from '../../../utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './comments.css';
 
@@ -12,7 +13,7 @@ class CommentsContainer extends Component {
 
     getComments = async () => {
         try {
-            let res = await axios.get(`http://localhost:3001/api/posts/byid/${this.props.postItem}`);
+            let res = await axios.get(apiUrl(`/api/posts/byid/${this.props.postItem}`));
             if (res.status === 200) {
                 this.setState({ comments: res.data.comments });
             } else {
@@ -26,7 +27,8 @@ class CommentsContainer extends Component {
     postComment = async () => {
         let body = this.commentForm.value;
         try {
-            let res = await axios.post('http://localhost:3001/api/comments/', { body, postItem: this.props.postItem },
+            let res = await axios.post(apiUrl('/api/comments/'),
+                { body, postItem: this.props.postItem },
                 { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             if (res.status === 201) {
                 console.log("Successfully creating a comment");

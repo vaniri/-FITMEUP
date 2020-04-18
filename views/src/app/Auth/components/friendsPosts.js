@@ -4,6 +4,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaUserEdit, FaRegCommentDots } from 'react-icons/fa';
 import UserContainer from '../components/user/user';
+import { apiUrl } from '../../utils';
 
 
 class FriendsPosts extends Component {
@@ -14,7 +15,7 @@ class FriendsPosts extends Component {
 
     getfriendsPosts = async () => {
         try {
-            const res = await axios.get('http://localhost:3001/api/posts/subs/',
+            const res = await axios.get(apiUrl('/api/posts/subs/'),
                 { headers: { 'Authorization': `Bearer ${localStorage.token}` } }, localStorage.userId);
             if (res.status === 200) {
                 this.setState({ posts: res.data });

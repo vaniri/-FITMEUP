@@ -3,6 +3,7 @@ import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 import axios from 'axios';
+import { apiUrl } from '../../../utils';
 
 const RegisterForm = props => {
     const [username, setUsername] = useState("");
@@ -12,7 +13,7 @@ const RegisterForm = props => {
 
     let creatUser = async () => {
         try {
-            const res = await axios.post('http://localhost:3001/api/users/', { username, email, password });
+            const res = await axios.post(apiUrl('/api/users/'), { username, email, password });
             if (res.status === 201) {
                 console.log("Successfully creating new user");
                 localStorage.token = res.data.token;

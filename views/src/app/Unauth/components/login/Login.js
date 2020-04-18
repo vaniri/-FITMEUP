@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaArrowRight } from "react-icons/fa";
 import axios from 'axios';
+import { apiUrl } from '../../../utils';
 import "./Login.css";
 
 const LoginForm = props => {
@@ -13,7 +14,7 @@ const LoginForm = props => {
 
     let logInUser = async () => {
         try {
-            const res = await axios.post('http://localhost:3001/api/users/login', { email, password });
+            const res = await axios.post(apiUrl('/api/users/login'), { email, password });
             if (res.status === 200) {
                 console.log("User log in successful");
                 localStorage.token = res.data.token;

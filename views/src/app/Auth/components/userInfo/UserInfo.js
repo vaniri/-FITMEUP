@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { apiUrl } from '../../../utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './UserInfo.css';
-
-
 
 class UserInfo extends Component {
     constructor(props) {
@@ -14,7 +13,7 @@ class UserInfo extends Component {
 
     getUserfriends = async () => {
         try {
-            const res = await axios.get('http://localhost:3001/api/subs/',
+            const res = await axios.get(apiUrl('/api/subs/'),
                 { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             if (res.status === 201) {
                 this.setState({ friends: res.data.friendsData });
