@@ -7,8 +7,7 @@ const Home = () => {
     return (
       <Container fluid="lr">
            <AllPosts
-                reqUrl={`http://localhost:3001/api/posts/byuser/${localStorage.userId}`}
-                reqType="multi"
+                reqUrl={'http://localhost:3001/api/posts/all'}
                 />
         </Container>
     )

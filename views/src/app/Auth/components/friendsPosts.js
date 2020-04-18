@@ -39,7 +39,7 @@ class FriendsPosts extends Component {
                             <h5 className="post-title" >{post.title}</h5>
                             <p className="post-author"><a href={`/profile/${post.author._id}`}><FaUserEdit /> {post.author.username}</a>
                                 <div className="hiden"><UserContainer userId={post.author._id} /></div>
-                                <p className="comment-date">posted: {post.posted.toString().slice(0, 10)}</p>
+                                <p className="comment-date">posted: {new Date(post.posted).toLocaleString()}</p>
                             </p>
                             <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
                             <Row>

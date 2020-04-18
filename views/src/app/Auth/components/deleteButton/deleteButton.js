@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FaRegTrashAlt } from "react-icons/fa";
 import './deleteButton.css';
 
-const DeleteButton = ({ url, component, postaAthorId }) => {
+const DeleteButton = ({ url, component, postAuthorId }) => {
 
     const history = useHistory();
 
@@ -26,7 +26,7 @@ const DeleteButton = ({ url, component, postaAthorId }) => {
 
     return (
         <div id="animation-delete">
-            {localStorage.userId === postaAthorId ?
+            {localStorage.userId === postAuthorId ?
                 (<button id="delete-bitton" type="submit" onClick={removeContent}>
                     <FaRegTrashAlt />
                 </button>) : (<div></div>)

@@ -10,7 +10,6 @@ const PostWithComments = ({ postItem }) => {
         <Container fluid="lr">
             <PostContainer
                 reqUrl={`http://localhost:3001/api/posts/byid/${postItem}`}
-                reqType="single"
             />
             <CommentsContainer postItem={postItem} />
         </Container>

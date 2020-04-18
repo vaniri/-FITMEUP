@@ -42,7 +42,11 @@ class CommentsContainer extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.postComment();
-        let comment = { body: this.commentForm.value, author: { username: localStorage.username } };
+        let comment = {
+            body: this.commentForm.value,
+            author: { username: localStorage.username, image: localStorage.userImg },
+            posted: new Date()
+        };
         this.setState({ comments: [...this.state.comments, comment] });
         this.commentForm.value = "";
     }
@@ -52,7 +56,6 @@ class CommentsContainer extends Component {
     }
 
     render() {
-        console.log(this.state.comments)
         return (
             <div>
                 <Container fluid="sm">
@@ -61,7 +64,7 @@ class CommentsContainer extends Component {
                             <img className="user-img" src={comment.author.image}/>
                             <Col className="comment">
                     {<p className="comment-author">{comment.author ? comment.author.username : "<no author>"}</p>}
-                    <p className="comment-date" >posted: {comment.posted.toString().slice(0, 10)}</p>
+                    <p className="comment-date" >posted: {new Date(comment.posted).toLocaleString()}</p>
                                 <p>{comment.body}</p>
                             </Col>
                         </Row>

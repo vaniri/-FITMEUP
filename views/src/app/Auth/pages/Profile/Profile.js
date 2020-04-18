@@ -2,7 +2,7 @@ import React from 'react';
 import UserContainer from '../../components/user/user';
 import { Container, Col, Row } from 'react-bootstrap';
 import UserInfo from '../../components/userInfo/UserInfo';
-import PostContainer from '../../components/post/post';
+import AllPosts from '../../components/AllPosts/AllPosts';
 import './Profile.css';
 
 const Profile = () => {
@@ -17,9 +17,8 @@ const Profile = () => {
 
                 <Col>
                 <h4>YOUR POSTS:</h4>
-                    <PostContainer
-                        reqUrl={`http://localhost:3001/api/posts//byuser/${localStorage.userId}`}
-                        reqType="multi"
+                    <AllPosts
+                        reqUrl={`http://localhost:3001/api/posts/byuser/${localStorage.userId}`}
                     />
                 </Col>
             </Row>

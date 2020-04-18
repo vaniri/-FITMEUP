@@ -16,7 +16,6 @@ class UserContainer extends Component {
         const res = await axios.get(`http://localhost:3001/api/users/${this.props.userId || localStorage.userId}`);
         if (res.status === 200) {
             this.setState(res.data.user);
-            console.log(this.state.user);
             // const likes = await axios.get('http://localhost:3001/api/likes/',
             // { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             // console.log(likes);

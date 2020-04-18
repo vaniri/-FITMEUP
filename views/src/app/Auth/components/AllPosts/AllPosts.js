@@ -13,8 +13,9 @@ class AllPosts extends Component {
     }
 
     getUserPosts = async () => {
-        const res = await axios.get('http://localhost:3001/api/posts/all');
+        const res = await axios.get(this.props.reqUrl);
         if (res.status === 200) {
+            console.log(res.data);
             this.setState({ posts: res.data.posts });
         }
         else if (res.status === 404) {
@@ -38,7 +39,7 @@ class AllPosts extends Component {
                             <p className="post-author">
                                 <a className="author-link" href={`/profile/${post.author._id}`}><FaUserEdit /> {post.author.username}</a>
                                 <div className="hiden"><UserContainer userId={post.author._id} /></div>
-                                <p className="comment-date">posted: {post.posted.toString().slice(0, 10)}</p>
+                                <p className="comment-date">posted: {new Date(post.posted).toLocaleString()}</p>
                             </p>
                             <p className="content" dangerouslySetInnerHTML={{ __html: post.content }}></p>
                             <Col id="link-container">
