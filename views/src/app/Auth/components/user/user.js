@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Col, Row, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaUser, FaEnvelope} from "react-icons/fa";
+import { apiUrl } from '../../../utils';
 import UploadImg from '../../components/uploadImg/uploadImg';
 import SubsButton from '../subsButton/subsButton';
 import './user.css';
@@ -14,10 +15,10 @@ class UserContainer extends Component {
     }
 
     getUserData = async () => {
-        const res = await axios.get(`http://localhost:3001/api/users/${this.props.userId || localStorage.userId}`);
+        const res = await axios.get(apiUrl(`/api/users/${this.props.userId || localStorage.userId}`));
         if (res.status === 200) {
             this.setState(res.data.user);
-            // const likes = await axios.get('http://localhost:3001/api/likes/',
+            // const likes = await axios.get(apiUrl('/api/likes/'),
             // { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             // console.log(likes);
             // this.setState({ ...res.data.user, likes });

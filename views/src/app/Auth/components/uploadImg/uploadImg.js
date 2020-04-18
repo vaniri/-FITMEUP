@@ -1,12 +1,13 @@
 import React from "react";
 import ImageUploader from "react-images-upload";
 import axios from 'axios';
+import { apiUrl } from '../../../utils';
 
 const UploadImg = props => {
 
     let senduserImg = async (_, images) => {
         try {
-            const res = await axios.patch(`http://localhost:3001/api/users/${localStorage.userId}`, { image: images[0] });
+            const res = await axios.patch(apiUrl(`/api/users/${localStorage.userId}`), { image: images[0] });
             if (res.status === 204) {
                 console.log("User image uploaded successfully");
                 console.log(res.data);

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { apiUrl } from '../../../utils';
 import 'suneditor/dist/css/suneditor.min.css';
 import SunEditor, { buttonList, } from "suneditor-react";
 import { Container, Col, Row, Button } from 'react-bootstrap';
@@ -29,7 +30,7 @@ const PostEditorComponent = () => {
 
     let sendPost = async () => {
         try {
-            const res = await axios.post(`http://localhost:3001/api/posts/`,
+            const res = await axios.post(apiUrl('/api/posts/'),
                 { data: { title, content }, userId: localStorage.userId },
                 { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             if (res.status === 201) {

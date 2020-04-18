@@ -1,13 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import { FaUserPlus } from 'react-icons/fa';
+import { apiUrl } from '../../../utils';
 import './subsButton.css';
 
 const SubsButton = ({ tgtUser }) => {
 
     let subscribe = async () => {
         try {
-            const res = await axios.post('http://localhost:3001/api/subs',
+            const res = await axios.post(apiUrl('/api/subs'),
                 { tgtUser, srcUser: localStorage.userId },
                 { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
                 if (res.status === 201) {

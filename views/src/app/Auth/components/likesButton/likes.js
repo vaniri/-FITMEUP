@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {FaRegThumbsUp, FaRegLightbulb } from 'react-icons/fa';
 import axios from 'axios';
+import { apiUrl } from '../../../utils';
 import './likes.css';
 
 const LikeButton = ({ postItem, likesObj }) => {
@@ -9,7 +10,7 @@ const LikeButton = ({ postItem, likesObj }) => {
 
     let sendReaction = async (type) => {
         try {
-            const res = await axios.post('http://localhost:3001/api/likes',
+            const res = await axios.post(apiUrl('/api/likes'),
                 { type, postItem }, 
                 { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             if (res.status === 201) {
