@@ -10,8 +10,8 @@
 
 #logReg-container {
   background-color: #ffff;
-    padding: 0.5em;
-    box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.05), 2px 2px 3px 0 rgba(0, 0, 0, 0.05);
+  padding: 0.5em;
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.05), 2px 2px 3px 0 rgba(0, 0, 0, 0.05);
 }
 
 .btn, .btn-info, .btn-block {
@@ -22,7 +22,6 @@
   font-family: 'Lato';
   width: 30%;
   margin: auto;
-  
 }
 
 .btn:hover, .btn-info:hover, .btn-block:hover {

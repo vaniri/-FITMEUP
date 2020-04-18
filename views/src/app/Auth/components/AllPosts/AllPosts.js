@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Col, Row } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaUserEdit, FaRegCommentDots } from 'react-icons/fa';
 import UserContainer from '../user/user'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './ALLPosts.css';
 
 class AllPosts extends Component {
@@ -15,13 +15,12 @@ class AllPosts extends Component {
     getUserPosts = async () => {
         const res = await axios.get(this.props.reqUrl);
         if (res.status === 200) {
-            console.log(res.data);
             this.setState({ posts: res.data.posts });
         }
         else if (res.status === 404) {
-            alert("No user found");
+            alert("No posts found");
         } else {
-            console.log("FAIL get user data:", res.status);
+            console.log("FAIL get posts data: ", res.status);
         }
     }
 

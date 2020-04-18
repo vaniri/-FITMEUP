@@ -18,10 +18,6 @@ class UserContainer extends Component {
         const res = await axios.get(apiUrl(`/api/users/${this.props.userId || localStorage.userId}`));
         if (res.status === 200) {
             this.setState(res.data.user);
-            // const likes = await axios.get(apiUrl('/api/likes/'),
-            // { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
-            // console.log(likes);
-            // this.setState({ ...res.data.user, likes });
         }
         else if (res.status === 404) {
             alert("No user found");
@@ -50,7 +46,6 @@ class UserContainer extends Component {
                         {
                             !this.props.userId ?
                                 (<Col>
-                                    {/* <p>{this.state.likes}</p> */}
                                     <hr />
                                     <UploadImg handleSelection={image => this.setState({ image })} />
                                 </Col>) :

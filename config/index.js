@@ -5,5 +5,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/fitmeup', {
     useUnifiedTopology: true
 });
 
-
 module.exports = { mongoose };

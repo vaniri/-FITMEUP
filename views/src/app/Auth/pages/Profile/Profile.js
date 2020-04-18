@@ -15,7 +15,6 @@ const Profile = () => {
                 </Col>
             </Row>
             <Row>
-
                 <Col>
                 <h4>YOUR POSTS:</h4>
                     <AllPosts

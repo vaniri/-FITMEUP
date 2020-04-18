@@ -15,7 +15,7 @@ const LikeButton = ({ postItem, likesObj }) => {
                 { headers: { 'Authorization': `Bearer ${localStorage.token}` } });
             if (res.status === 201) {
                 console.log("Reaction save successfully");
-                let newCounts = {...counts};
+                let newCounts = { ...counts };
                 newCounts[type] = (newCounts[type] || 0) + 1;
                 setCounts(newCounts);
             } else {

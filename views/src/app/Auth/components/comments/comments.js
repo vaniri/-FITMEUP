@@ -17,7 +17,7 @@ class CommentsContainer extends Component {
             if (res.status === 200) {
                 this.setState({ comments: res.data.comments });
             } else {
-                console.log("FAIL get comments:", res.status);
+                console.log("FAIL get comments: ", res.status);
             }
         } catch (err) {
             console.log("FAIL get comments: ", err);
@@ -82,7 +82,7 @@ class CommentsContainer extends Component {
                                             type="text"
                                         />
                                     </FormGroup>
-                                    <Button id="leave-comment" variant="primary" block bsSize="large" type="submit">Leave Comment
+                                    <Button id="leave-comment" variant="primary" block bsSize="large" type="submit">SUBMIT
                             </Button>
                                 </form>
                             </Col>

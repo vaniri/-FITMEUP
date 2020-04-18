@@ -45,7 +45,7 @@ router.route('/byid/:id')
             res.status(500).send(err);
         }
     })
-    .delete(expressJwt({ secret: jwtSecret }), async (req, res) => {
+    .delete(expressJwt({ secret: jwtSecret }), async (req, res) => { 
         try {
             let post = await db.Post.findById(req.params.id);
             if (post.author == req.user.userId) {
@@ -69,7 +69,7 @@ router.route('/byid/:id')
             likes.forEach(el => { likesObj[el._id] = el.count });
             res.status(200).json({ ...post, comments, likesObj });
         } catch (err) {
-            console.log("Error find post or comments", err);
+            console.log("Error find post, comments or likes data", err);
             res.status(500).send(err);
         }
     })
@@ -82,7 +82,7 @@ router.get('/subs', expressJwt({ secret: jwtSecret }),
             let friendsPosts = await db.Post.find({'author': { $in: friends }}).populate('author').lean();
             res.status(200).json(friendsPosts);
         } catch (err) {
-            console.log(err);
+            console.log("Fail to subscribe". err);
             res.status(500).send(err);
         }
 })

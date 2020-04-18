@@ -23,7 +23,7 @@ const LoginForm = props => {
                 localStorage.userImg = res.data.userImg;
                 loginHandler();
             } else {
-                console.log("FAIL log in"); //TODO
+                console.log("FAIL log in");
             }
         } catch (err) {
             console.log("Failed to send request:", err);
@@ -58,11 +58,10 @@ const LoginForm = props => {
                     />
                 </FormGroup>
                 <div id="logo-div">
-                <Button className="" variant="info" block bsSize="large" type="submit">
-                    Login <FaArrowRight />
-                </Button>
+                    <Button className="" variant="info" block bsSize="large" type="submit">
+                        Login <FaArrowRight />
+                    </Button>
                 </div>
-                
             </form>
         </div>
     );

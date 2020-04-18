@@ -20,9 +20,9 @@ class PostContainer extends Component {
         if (res.status === 200) {
             this.setState({ post: res.data });
         } else if (res.status === 404) {
-            alert("No posts found");
+            alert("No post found");
         } else {
-            console.log("FAIL get posts", res.status);
+            console.log("FAIL get post", res.status);
         }
     }
 

@@ -10,8 +10,6 @@ const UploadImg = props => {
             const res = await axios.patch(apiUrl(`/api/users/${localStorage.userId}`), { image: images[0] });
             if (res.status === 204) {
                 console.log("User image uploaded successfully");
-                console.log(res.data);
-                props.handleSelection(images[0]);
             } else {
                 console.log("FAIL upload user image");
             }

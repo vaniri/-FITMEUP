@@ -1,9 +1,9 @@
 const express = require('express');
 const router = require('express').Router();
 const db = require('../../models/index');
-const { handleUpDelRes } = require('./utils/utils.js');
 const expressJwt = require('express-jwt');
 const { jwtSecret } = require('../../utils/utils');
+const { handleUpDelRes } = require('./utils/utils.js');
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));

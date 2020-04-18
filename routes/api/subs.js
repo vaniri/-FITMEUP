@@ -27,8 +27,7 @@ router.route('/')
             console.log("FAIL get friends data");
             res.status(500).send(err);
         }
-    }
-    )
+    });
 
 module.exports = router;
 
