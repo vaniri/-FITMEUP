@@ -17,4 +17,10 @@ Users can create an account, made a post using [post editor](https://github.com/
 * Bootstrap-react
 * authentication bild with argon 2, express-jvt and jsonwebtoken
 
+![GitHub Logo](https://habrastorage.org/webt/ud/kl/wh/udklwhb3nqccnsyruyolmr3hkrk.png)
+
+![GitHub Logo](https://habrastorage.org/webt/bh/jo/ro/bhjorofew4ump1vrsoenqftg1zg.png)
+
+![GitHub Logo](https://habrastorage.org/webt/g8/s1/sg/g8s1sgs6ojhd3_ex5nz0idythck.png)
+
 
